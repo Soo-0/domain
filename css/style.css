@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/*  z-index 정의, 레이아웃 = 20, 컨텐츠 = 10이하, 팝업 = 50, 로딩창 = 100 */
+/* reset */
+*{box-sizing:border-box}
+*:before, *:after{box-sizing:border-box;word-break:keep-all;word-wrap:break-word}
+html{height:100%}
+body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, button, figure, xmp{margin:0;padding:0;box-sizing:border-box;}
+body{font:400 15px/1.2 'NanumBarunGothic', 'sans-serif';height:100%;color:#111;word-break:keep-all;box-sizing:border-box}
+legend, caption{overflow:hidden;width:1px;height:1px;color:transparent}
+a{text-decoration:none;color:inherit}
+a[href^="tel"]{cursor:default}
+fieldset, button{background:none;border:0}
+li{list-style:none}
+table{width:100%;border-spacing:0;border-collapse:collapse}
+caption{font-size:0;line-height:0}
+iframe{width:100%;vertical-align:middle;border:0 none}
+button, input, optgroup, select, textarea{font:inherit}
+button{cursor:pointer;outline:0}
+h1, h2, h3, h4, h5, h6{font-weight:700}
+input, select, textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-border-radius:0;border-radius:0;outline:0}
+b, strong{font-weight:700}
+em{font-style:inherit}
+img{width:100%;vertical-align:top}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicUltraLightSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicUltraLightSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicUltraLightSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-SemiBold.ttf) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-Regular.ttf) format('truetype');
+    font-weight:700;/* 굵기 마다 지정 */
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicBoldSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicBoldSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicBoldSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-Bold.ttf) format('truetype');
+    font-weight:900;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'BhuTukaExpandedOne';
+    /* src: local(없을경우 당구장표시); */
+    src: url(../font/BhuTukaExpandedOne-Regular.ttf) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+
+/* *************************************************** */
+
+/*skipNavi*/
+#skipNavi {position:relative;display:none}
+#skipNavi a{display:block;position:absolute;left:0;top:-300px;width:300px;text-align:center;color:#fff;background:#111;z-index:200;}
+#skipNavi a:focus, #skipNavi a:hover{top:0px;}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;z-index:100;width:100%;height:60px;padding:10px 16px;background:#111;color:#fff;box-sizing:border-box}
+/* header:after{content:'';position:absolute;left:16px;bottom:0;width:calc(100% - 32px);height:1px;background:#111} */
+header .title{font-family:'BhuTukaExpandedOne';font-size:24px}
+.white header{background:#fff;color:#111;box-shadow:0 4px 8px rgba(0, 0, 0, 0.2);}
+.contact_area .contact_area_tit{font-family:'BhuTukaExpandedOne';font-size:18px;font-weight:700;}
+.contact_area .contact_area_tool{display:none;position:absolute;top:20px;right:16px;padding:20px 16px;background:#111;border-radius:9px;color:#fff;transition:all 1s ease-in}
+.contact_area .contact_area_tool li{position:relative}
+.contact_area .contact_area_tool li:after{display:block;content:'';width:100%;height:1px;margin-top:5px;background:#fff}
+.contact_area .contact_area_tool li + li{margin-top:10px}
+.contact_area .contact_area_tool li strong{display:inline-block;margin-right:10px}
+.contact_area .btn_copy{display:inline-block;margin-left:10px;padding:2px 8px;background:#fff;font-size:12px;font-weight:900;border-radius:10px;color:#111}
+
+/* contents */
+.wrap{position:relative;min-height:100vh;box-sizing:border-box}
+#container{position:relative;min-height:100vh;height:100%;padding:60px 0 0;background:#111;color:#fff;box-sizing:border-box}
+#contents{position:relative;height:100%;}
+/* #container{display:flex;flex-direction:column;flex-grow:1;height:100%;padding-top:55px} */
+
+/*common*/
+.blind{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin-left:-1px;overflow:hidden;color:transparent;border:0 none;background:transparent;}
+.m_none{display:none;}
+.w_none{display:block;}
+
+/* main */
+/* .main{background:#000;height:500px}
+.main canvas{position:fixed;top:0;left:0;min-height:500px;} */
+
+/* work */
+.work{position:relative;height:100%;padding-top:35px;background:#fff;border-radius:20px 20px 0 0;color:#111}
+/* .work:before{display:block;content:'';width:100%;height:35px;background:#fff;} */
+/* .work h2{position:relative;font-size:45px;font-weight:900;text-align:center}
+.work h2:after{content:'';position:absolute;top:60px;left:50%;transform:translateX(-50%);width:2px;height:80px;background:#000} */
+.work .inner{position:relative;width:100%;padding:0 16px 20px}
+.btn_wrap{display:flex;flex-wrap:nowrap;justify-content:space-around;position:-webkit-sticky;position:sticky;top:10px;width:100%;background:#fff;}
+.btn{display:inline-block;padding:5px 10px;font-weight:700;color:#888}
+.btn.on{border-bottom:2px solid #111;color:#111;font-weight:900}
+.work_list{margin-top:20px}
+.work_list > li{}
+.work_list > li + li{margin-top:20px}
+.work_list > li .img{}
+.project{margin-top:20px}
+.project .project_name{font-size:20px;font-weight:900}
+.project .project_name span{display:block;margin-bottom:6px;font-size:13px;font-weight:700}
+.project .project_date_output{}
+.project .project_date_output ul{}
+.project .project_date_output li{position:relative;margin-top:5px;font-size:13px}
+.project .project_date_output li + li{}
+
+
+
+/* 
+@media only screen and (max-width:320px){
+    
+}
+
+@media only screen and (min-width: 1025px){
+    .work h2:after{content:'';position:absolute;top:60px;left:50%;transform:translateX(-50%);width:2px;height:180px;background:#000}
+    .work .inner{max-width:1240px;margin:0 auto;padding:0;}
+
+} */
